@@ -1,0 +1,15 @@
+
+table {
+  width: 100%;
+}
+td img {
+  width: 100%;
+}
+.hand {
+  width: 30%;
+  margin: 50px;
+}
+.hand:hover ~ table tbody tr:nth-child(2n + 1) td:nth-child(2n + 1),
+.hand:hover ~ table tbody tr:nth-child(2n) td:nth-child(2n) {
+  opacity: 0%;
+}

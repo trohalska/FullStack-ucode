@@ -1,0 +1,21 @@
+p {
+  text-align: justify;
+}
+img {
+  width: 100%;
+}
+div {
+  box-sizing: border-box;
+  width: 50%;
+  margin-right: 20px;
+  float: left;
+}
+
+@media print {
+  img {
+    width: 50%;
+  }
+  div {
+    width: 100%;
+  }
+}
