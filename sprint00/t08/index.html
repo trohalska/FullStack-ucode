@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>t08: Superhero form</title>
+    <meta charset="utf-8" >
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>Superhero Form</h1>
+  <fieldset>
+    <form action="/" method="post">
+      <fieldset>
+        <legend>About the Superhero</legend>
+        <span>Real Name</span>
+        <input autofocus type="text" name="name" maxlength="16" placeholder="Superhero real name">
+        <span>Superhero Name</span>
+        <input type="text" name="alias" maxlength="16" placeholder="Superhero alias">
+        <span>Age</span>
+        <input type="number" min="1" max="999">
+        <br><br>
+        <span>About</span>
+        <textarea name="text" cols="70" rows="5" maxlength="500" placeholder="information about the superhero, max 500 symbols"></textarea>
+        <br><br>
+        <label for="photo">Photo</label>
+          <input type="file" name="photo" id="photo">
+      </fieldset>
+      <fieldset>
+        <legend>Powers</legend>
+        <input id="telekin" type="checkbox"><label for="telekin"> Telekinesis</label>
+        <input id="strength" type="checkbox"><label for="strength"> Super strength or speed</label>
+        <input id="shape" type="checkbox"><label for="shape"> Shapeshifting</label>
+        <input id="flight" type="checkbox"><label for="flight"> Flight</label>
+        <input id="elem" type="checkbox"><label for="elem"> Elemental control</label>
+        <input id="other" type="checkbox"><label for="other"> Other</label>
+        <br><br>
+        <span>Level of control:</span>
+        <input type="range" min="0" max="10" value="1" class="slider">
+      </fieldset>
+      <fieldset>
+        <legend>Origin of Powers</legend>
+        <input type="radio" name="powers"> Unknown
+        <input type="radio" name="powers"> Freak lab accident
+        <input type="radio" name="powers"> Chosen by an ancientwise being
+        <input type="radio" name="powers"> The superhero is not human
+        <input type="radio" name="powers"> Other
+      </fieldset>
+      <br>
+      <button type="reset">CLEAR</button>
+      <button type="submit">SEND</button>
+      <br><br>
+    </form>
+  </fieldset>
+</body>
+
+</html>

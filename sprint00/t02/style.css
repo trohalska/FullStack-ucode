@@ -1,0 +1,30 @@
+/* float or display/grid */
+
+input, button {
+  box-sizing: border-box;
+  padding: 0 10px 0 10px;
+  color: green;
+  height: 2em;
+  border-radius: .2em;
+  float: left;
+}
+input:hover, button:hover {
+  color: red;
+}
+
+.example {
+  width: 100%;
+  /* display: grid;
+  grid-template-columns: 1fr auto; */
+}
+
+.example > input {
+  border: .2em solid #3063b5;
+  width: 93.5%;
+}
+
+.example > button {
+  border: 1px solid grey;
+  width: 6.5%;
+  border-left: none;
+}

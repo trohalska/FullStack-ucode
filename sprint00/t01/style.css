@@ -1,0 +1,44 @@
+table {
+  border-collapse: collapse;
+  text-align: center;
+}
+
+thead {
+  border: 2px solid black;
+  background-color: black;
+  color: white;
+}
+
+table, td {
+  border: 2px solid #ccc;
+  padding: 10px;
+}
+
+img {
+  height: 160px;
+  border-radius: 40px;
+}
+
+#soul {
+  background-color:#cc944d;
+}
+
+#time {
+  background-color:#377d21;
+}
+
+#space {
+  background-color:#22578e;
+}
+
+#mind {
+  background-color:#fffd55;
+}
+
+#reality {
+  background-color: #b23834;
+}
+
+#power {
+  background-color: #8077b2;
+}

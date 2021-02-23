@@ -1,0 +1,16 @@
+h1 {
+  width: 100%;
+  background-color: red;
+}
+body {
+  text-align: center;
+}
+span {
+  width: 50%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 4em;
+  color: white;
+  position: relative;
+  bottom: -29px;
+}
