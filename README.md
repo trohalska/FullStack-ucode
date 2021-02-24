@@ -1,7 +1,7 @@
 # FullStack-ucode
 ucode FullStack program (front-end + Node.js)
 
-###Sprint-00 (basic html, css):
+### Sprint-00 (basic html, css):
 - t00	html (superhero trivia)
 - t01	html, css (infinity stones table)
 - t02	input, button (super search)
@@ -15,7 +15,7 @@ ucode FullStack program (front-end + Node.js)
 - t10	div and hover (weather week)
 - t11	::before ::after (I am Groot)
 
-###Sprint-01 (advanced html, css):
+### Sprint-01 (advanced html, css):
 - t00   @media print (Print-ready)
 - t01   transform rotate (Turn around...)
 - t02   :hover nth-child (The Infinity Gauntlet)
@@ -28,7 +28,7 @@ ucode FullStack program (front-end + Node.js)
 - t09   grid, @media screen (grid img)
 - t10   form (settings)
 
-###Sprint-02 (Java Script):
+### Sprint-02 (Java Script):
 - t00   js (inside html and in the file)
 - t01   alert (js data types)
 - t02   alert, prompt, RegExp.* (Superhero name maker)
@@ -44,6 +44,6 @@ ucode FullStack program (front-end + Node.js)
 - t12   prompt, String.*, Closure concept (Hulk Closure)
 - t13   alert, setTimeout, Chain concept (Calculator)
 
-###Sprint-03 (Java Script):
+### Sprint-03 (Java Script):
 
 ???
