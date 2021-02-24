@@ -45,5 +45,6 @@ ucode FullStack program (front-end + Node.js)
 - t13   alert, setTimeout, Chain concept (Calculator)
 
 ### Sprint-03 (Java Script):
-
-???
+- t00   Object.*, Math.*, Date.*, extends (Prototype)
+- t01   String.*, Array.*, prototype (Prototype function)
+- t02   Object.*, Class.*, setInterval, clearInterval (Timer)
