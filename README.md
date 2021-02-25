@@ -48,3 +48,15 @@ ucode FullStack program (front-end + Node.js)
 - t00   Object.*, Math.*, Date.*, extends (Prototype)
 - t01   String.*, Array.*, prototype (Prototype function)
 - t02   Object.*, Class.*, setInterval, clearInterval (Timer)
+- t03   Object.*, Class.*, String.*, Array.*, Function.*, DOM, prompt (Upgrade Human)
+
+* t04   Object.*, String.*, Array.* (Mixin) sort algorithm different
+
+- t05   Set.*, Map.*, WeakSet.*, WeakMap.* (Collections)
+- t06   isNaN(), console.error(), console.log(), prompt(), Number.* (Step generator)
+- t07   Object.*, Class.*, String.*, Array.* (LinkedList)
+
+* t08   export module (Export LinkedList) -> need node.js
+
+- t09   Proxy, Object.*, Number.* (Hidden Proxy)
+
