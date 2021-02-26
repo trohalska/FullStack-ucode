@@ -1,6 +1,4 @@
-"use strict";
-
-import {createLinkedList} from "./script";
+import {createLinkedList} from "./script.js";
 
 const ll = createLinkedList([100, 1, 2, 3, 100, 4, 5, 100]);
 ll.log();

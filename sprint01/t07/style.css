@@ -1,0 +1,250 @@
+
+body{
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+header{
+    background-color: #823028;
+    display: flex;
+    padding: 25px 25px 8px 25px;
+    color: white;
+    font-size: 20px;
+}
+
+.Logo{
+    flex: 3;
+    font-weight: bold;
+}
+.About{flex: 2;}
+.Contact{flex: 2;}
+.Search{flex: 2;}
+.Phone{
+    flex: 3;
+    text-align: center;
+}
+
+.myUrl{
+    display: flex;
+    background-color: #d6d5ca;
+    padding: 10px;
+}
+
+.myUrl div:nth-child(1){
+    color: #823028;
+}
+
+.myUrl div:nth-child(4){
+    display: none;
+}
+
+.myUrl div:nth-child(3) a{
+    text-decoration: none;
+    color: black;
+}
+
+.myUrl div:nth-child(5){
+    display: none;
+}
+
+.myUrl div{
+    text-align: center;
+    width: 50px;
+}
+
+.checkboxes{
+    display: flex;
+}
+
+.All{
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 20px;
+    color: white;
+    background-color: pink;
+    width: 100px;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.fir{
+    margin-left: 30px;
+}
+
+.check-with-label{
+    display: none;
+}
+
+.check-with-label:checked + .All{
+    background-color: black;
+}
+
+.check-with-label:checked + .All::after {
+    content: "  \2713";
+}
+
+.Catalog h1{
+    padding-left: 30px;
+}
+
+.Content{
+    padding-top: 50px;
+    display: flex;
+}
+
+/*.Content div{*/
+/*    border: 1px solid black;*/
+/*}*/
+                                                    /*border: 1px solid black;*/
+.filter{
+    flex: 1;
+}
+
+.main {
+    flex: 2;
+}
+
+.mainFirst, .mainSecond{
+    display: flex;
+}
+
+.mainFirst div img, .mainSecond div img{
+    width: 200px;
+    height: 160px;
+    border: 1px solid grey;
+    border-radius: 60px;
+}
+
+.mainFirst div, .mainSecond div{
+    text-align: center;
+    flex: 1;
+    padding: 20px;
+    align-items: center;
+}
+
+.mainFT div input{
+    padding: 20px;
+    width: 100%;
+    background-color: #853129;
+    border-radius: 10px;
+    color: white;
+}
+
+.aboutSpider div:nth-child(3){
+    font-style: italic;
+    color: red;
+}
+
+.aboutSpider div:nth-child(2), .aboutGlider div:nth-child(2), .aboutBomb div:nth-child(2){
+    font-weight: bold;
+}
+
+.aboutSpider div, .aboutBomb div, .aboutGlider div{
+    text-align: left;
+}
+
+input[type="button"]:disabled { background: #ccc; }
+
+.filter div{
+    padding: 15px;
+}
+
+.filter{
+    padding-left: 30px;
+}
+
+.detailsPage div img{
+    width: 500px;
+}
+
+.detailsPage{
+    display: flex;
+}
+
+.detailsPage div{
+    text-align: center;
+
+}
+
+.firstDetail{
+    flex: 1;
+}
+.secondDetail{
+    flex: 1;
+    text-align: left!important;
+    padding-top: 40px;
+}
+
+.firstDetail img{
+    border-radius: 150px;
+}
+
+.secondDetail div{
+    padding: 10px;
+    text-align: left;
+}
+
+.secondDetail div:nth-child(3){
+    font-style: italic;
+}
+
+.secondDetail div:nth-child(2){
+    font-weight: bold;
+}
+
+.secondDetail input{
+    padding: 15px;
+    width: 250px;
+    border-radius: 10px;
+    background-color: #853129;
+}
+
+.comments{
+    display: flex;
+}
+
+.comments div{
+    border-radius: 20px;
+    background-color: #d6d5ca;
+}
+
+.comments div img{
+    width: 200px;
+}
+
+.goblin{
+    padding-left: 60px;
+}
+
+footer{
+    display: flex;
+}
+
+footer div{
+    padding: 20px;
+    background-color: #823028;
+    width: 50%;
+    color: white;
+}
+
+footer div:nth-child(2){
+    text-align: right;
+}
+
+@media screen and (max-width: 767px) {
+    .Content{display: block;}
+    header{display:none}
+    .mainFT{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .detailsPage{
+        display: block;
+        text-align: center;
+    }
+    .detailsPage div:not(.noth){
+        text-align: center;
+    }
+}
+

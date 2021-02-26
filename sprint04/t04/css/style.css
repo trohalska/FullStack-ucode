@@ -1,0 +1,103 @@
+body {
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    width: 80vw;
+    max-width: 1024px;
+    min-width: 840px;
+    margin: 0 auto;
+}
+nav {
+    display: flex;
+    margin: 0 auto;
+}
+.category {
+    height: 2em;
+    width: 7em;
+    border: 1px solid #e6e6e6;
+    border-radius: .25em .25em 0 0;
+    line-height: 2em;
+    text-align: center;
+    user-select: none;
+    margin-right: 15px;
+    cursor: pointer;
+}
+.category:active {
+    box-shadow: 0 0 .25em;
+}
+.category-active {
+    background: #e6e6e6;
+}
+
+.main {
+    display: flex;
+    align-items: flex-start;
+    min-height: 400px;
+    background: #e6e6e6;
+    padding: .5em;
+}
+
+.film-list {
+    width: 21%;
+    margin: 1em;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    border-left:3px solid #e6e6e6;
+    padding-left: 1em;
+    cursor: pointer;
+    margin: 20px 0;
+}
+.li-active {
+    border-left:3px solid #4c74bb;
+}
+
+.film-info {
+    width: 45%;
+    margin: 0 15px;
+}
+.film-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+/*.red-heart {*/
+/*    color: darkred;*/
+/*}*/
+
+.actors {
+    display: flex;
+    justify-content: space-between;
+    font-size: .8em;
+}
+.actors > p {
+    margin: 5px;
+    border-radius: .25em;
+    background: #c7c8c9;
+    padding: 5px;
+}
+.description {
+    font-size: .8em;
+    text-align: justify;
+}
+.poster {
+    width: 30%;
+}
+.poster > img {
+    border-radius: .25em;
+    width: 100%;
+}
+
+

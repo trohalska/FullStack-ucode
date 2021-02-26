@@ -1,5 +1,4 @@
 // модуль "script.js"
-"use strict";
 
 class Node {
     constructor(value) {
@@ -86,6 +85,3 @@ export function createLinkedList (arr) {
     arr.forEach(value => ll.add(value));
     return ll;
 }
-
-module.exports = createLinkedList;
-// export function createLinkedList()

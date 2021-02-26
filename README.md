@@ -28,7 +28,7 @@ ucode FullStack program (front-end + Node.js)
 - t09   grid, @media screen (grid img)
 - t10   form (settings)
 
-### Sprint-02 (Java Script):
+### Sprint-02 (basic Java Script):
 - t00   js (inside html and in the file)
 - t01   alert (js data types)
 - t02   alert, prompt, RegExp.* (Superhero name maker)
@@ -44,19 +44,37 @@ ucode FullStack program (front-end + Node.js)
 - t12   prompt, String.*, Closure concept (Hulk Closure)
 - t13   alert, setTimeout, Chain concept (Calculator)
 
-### Sprint-03 (Java Script):
+### Sprint-03 (Java Script, classes, collections):
 - t00   Object.*, Math.*, Date.*, extends (Prototype)
 - t01   String.*, Array.*, prototype (Prototype function)
 - t02   Object.*, Class.*, setInterval, clearInterval (Timer)
 - t03   Object.*, Class.*, String.*, Array.*, Function.*, DOM, prompt (Upgrade Human)
-
-* t04   Object.*, String.*, Array.* (Mixin) sort algorithm different
-
+* t04   Object.*, String.*, Array.* (Mixin) --> encryption algorithm is different
 - t05   Set.*, Map.*, WeakSet.*, WeakMap.* (Collections)
 - t06   isNaN(), console.error(), console.log(), prompt(), Number.* (Step generator)
 - t07   Object.*, Class.*, String.*, Array.* (LinkedList)
-
-* t08   export module (Export LinkedList) -> need node.js
-
+- t08   export module (Export LinkedList)
 - t09   Proxy, Object.*, Number.* (Hidden Proxy)
+
+### Sprint-04 (Java Script, api):
+- t00   DOM (Secret lab)
+- t01   DOM, String.*, Array.* (Elements)
+- t02   String.*, Array.*, Object.*, DOM (Sort table)
+- t03   DOM, setInterval, clearInterval (Slideshow)
+- t04   DOM, Object.* (Marvelous list)
+- t05   DOM, Object.* (Drag'n'Drop Stones)
+- t06   setTimeout, Object.*, Class.*, String.*, Array.*, DOM (Lazy loading)
+- t07   Object.*, DOM, json, Date.*, String.*, Class.*, Array.* (Weather forecast)
+* t08   RegExp, cookies, DOM, String.*, Array.*, Object.*, Date.* (RegExp and Cookies)
+- t09   RegExp, localStorage, DOM, String.*, Array.*, Object.*, Date.* (LocalStorage)
+
+
+
+
+
+
+
+
+
+
 
