@@ -47,14 +47,14 @@ ucode FullStack program (front-end + Node.js)
 ### Sprint-03 (Java Script, classes, collections):
 - t00   Object.*, Math.*, Date.*, extends (Prototype)
 - t01   String.*, Array.*, prototype (Prototype function)
-- t02   Object.*, Class.*, setInterval, clearInterval (Timer)
-- t03   Object.*, Class.*, String.*, Array.*, Function.*, DOM, prompt (Upgrade Human)
-* t04   Object.*, String.*, Array.* (Mixin) --> encryption algorithm is different
-- t05   Set.*, Map.*, WeakSet.*, WeakMap.* (Collections)
-- t06   isNaN(), console.error(), console.log(), prompt(), Number.* (Step generator)
-- t07   Object.*, Class.*, String.*, Array.* (LinkedList)
-- t08   export module (Export LinkedList)
-- t09   Proxy, Object.*, Number.* (Hidden Proxy)
+- t02   Object.*, Class.*, String.*, Array.*, Function.*, DOM, prompt (Upgrade Human)
+- t03   Set.*, Map.*, WeakSet.*, WeakMap.* (Collections)
+- t04   export module (Export classes)
+- t05   Proxy, Object.*, Number.* (Hidden Proxy)
+- t06   Object.*, Class.*, setInterval, clearInterval (Timer)
+* t07   Object.*, String.*, Array.* (Mixin) --> encryption algorithm is different
+- t08   isNaN(), console.error(), console.log(), prompt(), Number.* (Step generator)
+- t09   Object.*, Class.*, String.*, Array.* (LinkedList)
 
 ### Sprint-04 (Java Script, api):
 - t00   DOM (Secret lab)
@@ -68,7 +68,7 @@ ucode FullStack program (front-end + Node.js)
 * t08   RegExp, cookies, DOM, String.*, Array.*, Object.*, Date.* (RegExp and Cookies)
 - t09   RegExp, localStorage, DOM, String.*, Array.*, Object.*, Date.* (LocalStorage)
 
-
+### Sprint-05 (Java Script, node.js):
 
 
 

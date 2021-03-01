@@ -1,5 +1,3 @@
-'use strict';
-
 class Node {
     constructor(value) {
         this.data = value;
@@ -7,7 +5,7 @@ class Node {
     }
 }
 
-class LinkedList {
+export class LinkedList {
     constructor() {
         this.head = null;
         this.length = 0;
@@ -80,31 +78,8 @@ class LinkedList {
     }
 }
 
-let createLinkedList = (arr) => {
+export function createLinkedList (arr) {
     const ll = new LinkedList();
     arr.forEach(value => ll.add(value));
     return ll;
 }
-
-// -------------------- tests
-
-const ll = createLinkedList([100, 1, 2, 3, 100, 4, 5, 100]);
-ll.log();
-// "100, 1, 2, 3, 100, 4, 5, 100"
-while(ll.remove(100)) {};
-ll.log();
-// "1, 2, 3, 4, 5"
-ll.add(10);
-ll.log();
-// "1, 2, 3, 4, 5, 10"
-console.log(ll.contains(10));
-// "true"
-let sum = 0;
-for (const n of ll) {
-    sum += n;
-}
-console.log(sum);
-// "25"
-ll.clear();
-ll.log();
-// ""

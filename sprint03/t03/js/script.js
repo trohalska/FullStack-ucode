@@ -1,150 +1,119 @@
 'use strict';
 
-let get = (id) => document.querySelector(id);
-let getAll = (id) => document.querySelectorAll(id);
+class GuestList {
+    guestList = new WeakSet();
 
-let timerId;
-let message = get('#message');
-let messageTime = 10;
-let maxCalories = 500;
-let addCalories = 200;
-let sec = 1000;
-
-// ---------------- ADDITIONAL FUNCTIONAL
-
-let reverseButtons = (events, on, off) => {
-    for (let event of events) {
-        let onclick = event.getAttribute(on);
-        event.setAttribute(off, onclick);
-        event.removeAttribute(on);
+    add(guest) {
+        this.guestList.add(guest);
     }
-};
-let showMsg = (interval, str, newStr = '', calories) => {
-    message.innerHTML = str;
-    let time = +interval * sec;
-    clearTimeout(timerId);
-    if (!calories || calories < maxCalories)
-        timerId = setTimeout(() => message.innerHTML = newStr, time);
-    else
-        timerId = setTimeout(() => message.innerHTML = '', time);
-};
-
-// ---------------- MAIN FUNCTIONAL
-
-class Human {
-    constructor(options) {
-        this.firstName = options.firstName;
-        this.lastName = options.lastName;
-        this.gender = options.gender;
-        this.age = options.age;
-        this.calories = options.calories;
+    isInvited(guest) {
+        return this.guestList.has(guest);
     }
-    sleepFor() {
-        let interval = prompt("Enter sleeping time (in seconds):");
-        if (interval && !(+interval)) {
-            alert("Invalid input");
-            return;
-        }
-        let events = getAll('[onclick]');
-        reverseButtons(events, 'onclick', 'off');
-        setTimeout(() => reverseButtons(events, 'off', 'onclick'), +interval * 1000);
-        showMsg(+interval, 'I\'m sleeping', 'I\'m awake now');
-    }
-
-    feed() {
-        if (this.calories >= maxCalories) {
-            showMsg(10, 'I\'m not hungry');
-            return;
-        }
-        this.calories += addCalories;
-        if (this.calories > maxCalories) {
-            this.calories = maxCalories;
-        }
-        get("#calories > span").innerHTML = this.calories;
-        showMsg(messageTime, 'Nom nom nom', 'I\'m still hungry', this.calories);
-    }
-
-    makingHungry() {
-        let calories = get('#calories > span');
-
-        this.calories -= addCalories;
-        if (this.calories < 0) {
-            this.calories = 0;
-        }
-        calories.innerHTML = this.calories;
+    removeGuest(guest) {
+        this.guestList.delete(guest);
     }
 }
 
-class Superhero extends Human {
-    constructor(option) {
-        super(option);
+class Menu {
+    menu = new Map();
+    add(name, price) {
+        if (!this.menu.has(name)) {
+            this.menu.set(name, price);
+        }
     }
-    fly() {
-        showMsg(messageTime, 'I\'m flying');
-    }
-    fightWithEvil() {
-        showMsg(messageTime, 'Khhhh-chh... Bang-g-g-g... Evil is defeated!');
+    printAll() {
+        this.menu.forEach((value, key) => console.log(`${key}, \$${value}`));
     }
 }
 
-let person = new Superhero({
-    firstName: 'Guy',
-    lastName: 'Ordinal',
-    gender: 'male',
-    age: 17,
-    calories: 400
-});
+class BankVault {
+    vault = new WeakMap();
 
-let getNewValue = (target) => {
-    let key = target.getAttribute('id'),
-        p = get(`#${key}`),
-        span = p.querySelector('span'),
-        newValue = prompt(`Enter new value for ${key}:`);
-
-    if (newValue && newValue.length < 10) {
-        if (typeof person[key] === 'number') {
-            if (!isNaN(+newValue)) {
-                person[key] = newValue;
-                span.innerHTML = newValue;
-            } else {
-                alert("Incorrect input");
-            }
-        } else {
-            person[key] = newValue;
-            span.innerHTML = newValue;
-        }
-    } else {
-        alert("Incorrect input");
+    add(key, box) {
+        this.vault.set(key, box);
     }
-};
-
-let renderProperties = () => {
-    let div = document.querySelector("#properties");
-
-    for (const [key, value] of Object.entries(person)) {
-        div.insertAdjacentHTML("beforeend",
-            `<p class="property" id="${key}" onclick="getNewValue(this)">${key}: ` +
-            `<span class="propValue">${value}</span></p>`);
+    isPresent(key) {
+        return this.vault.has(key);
     }
-};
-
-let turnToSuperhero = () => {
-    if (person.calories < maxCalories) {
-        showMsg(messageTime, "I\'m too hungry, feed me");
-        return;
+    remove(key) {
+        this.vault.delete(key);
     }
-    maxCalories = 1000;
-    get('#human').setAttribute('src', 'assets/images/superhero.jpg');
-    get("#turn").insertAdjacentHTML('afterend',
-        '<br><button onclick="person.fly()">Fly</button>' +
-        '<button onclick="person.fightWithEvil()">Fight with evil</button>');
-    get("#properties").removeChild(get("#turn"));
-};
+}
 
-renderProperties();
-setTimeout(() => {
-    setTimeout(function run() {
-        person.makingHungry();
-        setTimeout(run, 60 * sec);
-    });
-}, 5 * sec);
+class Coins {
+    coins = new Set();
+    add(name) {
+        this.coins.add(name);
+    }
+    printAll() {
+        let res = '';
+        this.coins.forEach(value => res += value + ' ');
+        console.log(`Coins collection: ${res}`);
+    }
+}
+
+// -------------------- tests
+
+const guestList = new GuestList();
+let mary = { name: 'Mary' },
+    sof = { name: 'Sofie' },
+    mark = { name: 'Mark' },
+    ant = { name: 'Antony' },
+    val = { name: 'Valery' }
+guestList.add(mary);
+guestList.add(sof);
+guestList.add(mark);
+guestList.add(sof);
+guestList.add(ant);
+guestList.add(val);
+console.log(guestList.guestList);
+
+console.log(guestList.isInvited(mary));
+console.log(guestList.isInvited("me"));
+
+guestList.removeGuest(mark);
+console.log(guestList.guestList);
+
+console.log(' ');
+
+const menu = new Menu();
+menu.add("Cookies", 2);
+menu.add("Salad", 5.5);
+menu.add("Ribs", 8);
+menu.add("Ribs", 234);
+menu.add("Steak", 12.5);
+menu.add("Pie", 6.99);
+menu.printAll();
+
+console.log(' ');
+
+const bank = new BankVault();
+let key1 = { credentials: '1234' },
+    key2 = { credentials: '345' },
+    key3 = { credentials: 'Ma675985798rk' },
+    key4 = { credentials: 'Ant6794679756ony' },
+    key5 = { credentials: '9999999' }
+bank.add(key1, 'Gold');
+bank.add(key2, 'Documents');
+bank.add(key3, 'Human head');
+bank.add(key1, 'trash, steal gold');
+bank.add(key4, 'silver spoons');
+bank.add(key5, 'legal papers');
+console.log(bank.vault);
+
+console.log(bank.isPresent(key1));
+console.log(bank.isPresent({ credentials: '1234' }));
+
+bank.remove(key3);
+console.log(bank.vault);
+
+console.log(' ');
+
+const coins = new Coins();
+coins.add("coin1");
+coins.add("coin1");
+coins.add("coin2");
+coins.add("coin3");
+coins.add("coin1");
+coins.printAll();
+console.log(coins.coins.size);

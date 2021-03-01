@@ -1,6 +1,11 @@
-import {createLinkedList} from "./script.js";
+import {createLinkedList, LinkedList} from "./modules/human.js";
 
 const ll = createLinkedList([100, 1, 2, 3, 100, 4, 5, 100]);
+
+const ll2 = new LinkedList();
+ll2.add(123);
+ll2.log();
+
 ll.log();
 // "100, 1, 2, 3, 100, 4, 5, 100"
 while(ll.remove(100)) {};

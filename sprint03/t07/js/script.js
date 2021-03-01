@@ -1,110 +1,79 @@
 'use strict';
 
-class Node {
-    constructor(value) {
-        this.data = value;
-        this.next = null;
+let houseMixin = {
+
+    wordReplace: function (word, replacement) {
+        let words = this.description.split(' ');
+        let result = '';
+        words.forEach(value => {
+                result += value === word ? replacement : value;
+                result += ' ';
+            });
+        this.description = result.trim();
+    },
+    wordInsertAfter(word, insertion) {
+        let words = this.description.split(' ');
+        let result = '';
+        words.forEach(value => {
+            result += value + ' ';
+            result += value === word ? insertion + ' ' : '';
+        });
+        this.description = result.trim();
+    },
+    wordDelete(word) {
+        let res = this.description.split(word);
+        this.description = res.join('');
+    },
+
+    wordEncrypt() {
+        let chars = Object.assign([], this.description);
+        let result = '';
+        chars.forEach(c => {
+            // if (c.match(/[A-Za-z]/g)) {
+                result += String.fromCharCode(c.charCodeAt(0) - 13);
+            // } else {
+            //     result += c;
+            // }
+        });
+        this.description = result;
+    },
+    wordDecrypt() {
+        let chars = Object.assign([], this.description);
+        let result = '';
+        chars.forEach(c => {
+            // if (c.match(/[A-Za-z]/g)) {
+                result += String.fromCharCode(c.charCodeAt(0) + 13);
+            // } else {
+            //     result += c;
+            // }
+        });
+        this.description = result;
     }
 }
 
-class LinkedList {
-    constructor() {
-        this.head = null;
-        this.length = 0;
-    }
-    add(value) {
-        let node = new Node(value);
-        if (this.length === 0) {
-            this.head = node;
-        } else {
-            let q = this.head;
-            while(q.next) {
-                q = q.next;
-            }
-            q.next = new Node(value);
-        }
-        this.length++;
-    }
-    remove(value) {
-        if (this.head.data === value) {
-            this.head = this.head.next;
-            this.length--;
-            return true;
-        } else {
-            for (let q = this.head; q.next; q = q.next) {
-                if (q.next.data === value) {
-                    q.next = q.next.next;
-                    this.length--;
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-    contains(value) {
-        for (let q = this.head; q; q = q.next) {
-            if (q.data === value) {
-                return true;
-            }
-        }
-        return false;
-    }
-    [Symbol.iterator] = function() {
-        let current = this.head;
-        return {
-            next() {
-                if (current) {
-                    let value = current.data;
-                    current = current.next;
-                    return {value: value, done: false};
-                }
-                return {done: true};
-            }
-        };
-    };
-    clear() {
-        this.head = null;
-    }
-    count() {
-        return this.length;
-    }
-    log() {
-        let res = '';
-        for (let q = this.head; q; q = q.next) {
-            res += q.data;
-            if (q.next) {
-                res += ', ';
-            }
-        }
-        console.log(res);
-    }
-}
 
-let createLinkedList = (arr) => {
-    const ll = new LinkedList();
-    arr.forEach(value => ll.add(value));
-    return ll;
-}
 
-// -------------------- tests
+const house = new HouseBuilder('88 Crescent Avenue',
+    'Spacious town house with wood flooring, 2-car garage, and a back patio.',
+    'J. Smith', 110, 5);
+Object.assign(house, houseMixin);
+console.log(house.getDaysToBuild());
+// 220
+console.log(house.description);
+// Spacious town house with wood flooring, 2-car garage, and a back patio.
+house.wordReplace("wood", "tile");
+console.log(house.description);
+// Spacious town house with tile flooring, 2-car garage, and a back patio.
+house.wordDelete("town ");
+console.log(house.description);
+// Spacious house with tile flooring, 2-car garage, and a back patio.
+house.wordInsertAfter ("with", "marble");
+console.log(house.description);
+// Spacious house with marble tile flooring, 2-car garage, and a back patio.
+house.wordEncrypt();
+console.log(house.description);
+// Fcnpvbhf ubhfr jvgu zneoyr gvyr sybbevat, 2-pne tnentr, naq n onpx cngvb.
+house.wordDecrypt();
+console.log(house.description);
+// Spacious house with marble tile flooring, 2-car garage, and a back patio.
 
-const ll = createLinkedList([100, 1, 2, 3, 100, 4, 5, 100]);
-ll.log();
-// "100, 1, 2, 3, 100, 4, 5, 100"
-while(ll.remove(100)) {};
-ll.log();
-// "1, 2, 3, 4, 5"
-ll.add(10);
-ll.log();
-// "1, 2, 3, 4, 5, 10"
-console.log(ll.contains(10));
-// "true"
-let sum = 0;
-for (const n of ll) {
-    sum += n;
-}
-console.log(sum);
-// "25"
-ll.clear();
-ll.log();
-// ""
