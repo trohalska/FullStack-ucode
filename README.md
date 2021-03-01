@@ -59,14 +59,18 @@ ucode FullStack program (front-end + Node.js)
 ### Sprint-04 (Java Script, api):
 - t00   DOM (Secret lab)
 - t01   DOM, String.*, Array.* (Elements)
-- t02   String.*, Array.*, Object.*, DOM (Sort table)
-- t03   DOM, setInterval, clearInterval (Slideshow)
-- t04   DOM, Object.* (Marvelous list)
-- t05   DOM, Object.* (Drag'n'Drop Stones)
-- t06   setTimeout, Object.*, Class.*, String.*, Array.*, DOM (Lazy loading)
-- t07   Object.*, DOM, json, Date.*, String.*, Class.*, Array.* (Weather forecast)
-* t08   RegExp, cookies, DOM, String.*, Array.*, Object.*, Date.* (RegExp and Cookies)
+- t02   DOM, setInterval, clearInterval (Image slider)
+- t03   Object.*, Class.*, String.*, Array.*, Function.* (Drag'n'Drop Stones)
+- t04   Object.*, DOM, json, Date.*, String.*, Class.*, Array.* (Weather forecast)
+- t05   alert, confirm, DOM, String.*, Array.*, Date.*, Object.*, JSON.* (Notes with cookies)
+- t06   DOM, String.*, Array.*, Object.* (Sort table)
+- t07   DOM, Object.*, String.*, Array.*, Set.* (Marvelous list)
+
+** t08   setTimeout, Object.*, Class.*, String.*, Array.*, DOM (Lazy loading)
+smth do not work
+
 - t09   RegExp, localStorage, DOM, String.*, Array.*, Object.*, Date.* (LocalStorage)
+- t10_E RegExp, cookies, DOM, String.*, Array.*, Object.*, Date.* (RegExp and Cookies)
 
 ### Sprint-05 (Java Script, node.js):
 

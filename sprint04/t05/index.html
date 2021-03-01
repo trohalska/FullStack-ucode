@@ -3,30 +3,37 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-    <title>Drag'n'Drop Stones</title>
-    <meta name="description" content="t05. Drag'n'Drop Stones">
+    <meta name="description" content="t05. Notes with cookies">
+    <meta name="keywords"
+          content="HTML, CSS, JavaScript, cookies, ucode, unitfactory, cbl, cblworld">
+    <meta name="author" content="Tetiana Rohalska">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes with cookies</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900"
+          rel="stylesheet"/>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap">
 </head>
 
 <body>
-<main>
-    <h1>Drag'n'Drop Stones</h1>
-    <div class="base">
-        <div class="block" id="red"></div>
-        <div class="block" id="green"></div>
-        <div class="block" id="blue"></div>
-        <div class="block" id="yellow"></div>
-        <div class="block" id="magenta"></div>
-        <div class="block" id="purple"></div>
+<div class="container">
+
+    <div class="buttons">
+        <button class="add" onclick="addCookies()">Add to cookies</button>
+        <button class="clear" onclick="clearCookies()">Clear cookies</button>
     </div>
-<!--    <div class="block" id="red"></div>-->
-<!--    <div class="block" id="green"></div>-->
-<!--    <div class="block" id="blue"></div>-->
-<!--    <div class="block" id="yellow"></div>-->
-<!--    <div class="block" id="magenta"></div>-->
-<!--    <div class="block" id="purple"></div>-->
-</main>
+
+    <div class="form">
+        <p>Text input:</p>
+        <textarea id="text" rows="12"></textarea>
+    </div>
+
+    <div class="archive">
+        <p>Notes archive:</p>
+        <div id="cookiesList"></div>
+    </div>
+</div>
+
 <script src="js/script.js"></script>
 </body>
+
+</html>

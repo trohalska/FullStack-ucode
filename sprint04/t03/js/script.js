@@ -1,35 +1,43 @@
-'use strict';
+'use strict'
 
-function showSlide(n) {
-  ind = n >= slides.length ? 0 : (ind = n < 0 ? slides.length - 1 : ind);
+let checkClass = (elem, attr) => elem.classList.contains(attr);
 
-  for (let i = 0; i < slides.length; ++i) {
-    slides[i].style.display = 'none';
-    dots[i].className = dots[i].className.replace(' active', '');
-  }
-  slides[ind].style.display = 'block';
-  dots[ind].className += ' active';
-}
+let main = document.querySelector("main"),
+    zIndexCounter = 0;
 
-function autoShow() {
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = 'none';
-    dots[i].className = dots[i].className.replace(' active', '');
-  }
-  if (ind >= slides.length)
-    ind = 0;
-  slides[ind].style.display = "block";
-  dots[ind].className += ' active';
+main.addEventListener('dblclick', (event) => {
+    let div = event.target
 
-  ind++;
-  setTimeout(autoShow, 3000);
-}
+    if (div.classList.contains('block')) {
+        div.classList.toggle('active')
+    }
+})
 
-let listSlides = (n) => {showSlide(ind += n);}
-let currentSlide = (n) => {showSlide(ind = n);}
+main.onmousedown = ((event) => {
+    let div = event.target
 
-let ind = 0;
-let slides = document.getElementsByClassName('hide');
-let dots = document.getElementsByClassName('dot');
+    if (checkClass(div, 'active')) {
+        let cursorX = event.clientX - div.getBoundingClientRect().left,
+            cursorY = event.clientY - div.getBoundingClientRect().top,
+            moveTo = (pageX, pageY) => {
+                div.style.left = pageX - cursorX + 'px'
+                div.style.top = pageY - cursorY + 'px'
+            },
+            moveDiv = (event) => moveTo(event.pageX, event.pageY);
 
-autoShow();
+        // div.style.opacity = '.6'
+        div.style.position = 'absolute'
+        div.style.zIndex = zIndexCounter
+        zIndexCounter += 1
+
+        moveTo(event.pageX, event.pageY)
+        document.addEventListener('mousemove', moveDiv)
+        div.onmouseup = (() => {
+            // div.style.opacity = '1'
+            document.removeEventListener('mousemove', moveDiv)
+            div.onmouseup = null;
+        })
+    }
+})
+
+document.ondragstart = () => false;

@@ -57,4 +57,4 @@ let text = document.querySelector("#text");
 let count = 0;
 
 showLocalStorage();
-console.log(localStorage);
+// console.log(localStorage);

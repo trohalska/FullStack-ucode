@@ -1,86 +1,99 @@
-'use strict'
+'use strict';
 
-let get = (id) => document.querySelector(id);
-let getAll = (id) => document.querySelectorAll(id);
+let x = 3;
+let y = 10;
+let data = ['Name', 'Strength', 'Age',
+    "Black Panther", '66', '53',
+    'Captain America', '79', '137',
+    'Captain Marvel', '97', '26',
+    'Hulk', '80', '49',
+    'Iron Man', '88', '48',
+    'Spider-Man', '78', '16',
+    'Thanos', '99', '1000',
+    'Thor', '95', '1000',
+    'Yon-Rogg', '73', '52'];
 
-let countSpan = get('#counter')
-let maxSpan = get('#maxImages')
-let imgBlock = get('#imgBlock')
-let counter = 0
-let maxImages = 22
-let images = [
-  './assets/images/1.jpg',
-  './assets/images/2.jpg',
-  './assets/images/3.jpg',
-  './assets/images/4.jpg',
-  './assets/images/5.jpg',
-  './assets/images/6.jpg',
-  './assets/images/7.jpg',
-  './assets/images/8.jpg',
-  './assets/images/9.jpg',
-  './assets/images/10.jpg',
-  './assets/images/11.jpg',
-  './assets/images/12.jpg',
-  './assets/images/13.jpg',
-  './assets/images/14.jpg',
-  './assets/images/15.jpg',
-  './assets/images/16.jpg',
-  './assets/images/17.jpg',
-  './assets/images/18.jpg',
-  './assets/images/19.jpg',
-  './assets/images/20.jpg',
-  './assets/images/21.jpg',
-  './assets/images/22.jpg'
-]
+document.getElementById('placeholder').innerHTML = '';
+tableCreate();
 
-let renderImg = () => {
-  images.map((img) => {
-    imgBlock.insertAdjacentHTML('beforeend',
-      `<img class="image lazy" src="./assets/images/temp.gif" \
-data-src="${img}" alt="${img}">`)
-  })
-}
+function tableCreate() {
+    let ph, tbl, tblBody, row, cell, cellText, id = 0;
 
-let addCounter = () => {
-  counter += 1
-  countSpan.innerHTML = counter
-  if (counter === maxImages) {
-    let div = get('.counter')
-    div.style.background = 'green'
-    // setTimeout(() => {
-    //   div.style.display = 'none'
-    // }, 3000)
-  }
-}
+    ph = document.getElementById('placeholder');
+    tbl = document.createElement('table');
+    tblBody = document.createElement('tbody');
 
-let lookForVisible = () => {
-  let imgAll = getAll('.lazy')
+    for (let j = 0; j < y; ++j) {
+        row = document.createElement('tr');
+        for (let i = 0; i < x; ++i) {
+            cell = document.createElement('td');
 
-  if ('IntersectionObserver' in window) {
-    let imgObserver = new IntersectionObserver((entries, observer) => {
-      entries.map((entry) => {
-        /* check if image is in viewport */
-        if (entry.isIntersecting) {
-          let lazyImg = entry.target
-          /* change src attr form placeholder to real src
-           * .dataset.(smth) = data-(smth) attr */
-          lazyImg.src = lazyImg.dataset.src
-          // lazyImg.style.height = 400 + 'px'
-          lazyImg.style.width = '600px'
-          /* remove class lazy */
-          lazyImg.classList.remove('lazy')
-          /* and remove element from observer list */
-          imgObserver.unobserve(lazyImg)
-          addCounter();
+            cell.setAttribute('id', id);
+            if (id >= 0 && id <= 2)
+                cell.setAttribute('onclick', `tableSort(${id})`);
+            cellText = document.createTextNode(`${data[id++]}`);
+
+            cell.appendChild(cellText);
+            row.appendChild(cell);
         }
-      })
-    })
-    /* append observer to each node from NodeList */
-    imgAll.forEach((lazyImage) => imgObserver.observe(lazyImage))
-  }
+        tblBody.appendChild(row);
+    }
+    tbl.appendChild(tblBody);
+    ph.appendChild(tbl);
+    tbl.setAttribute('id', 'table');
 }
 
-maxSpan.innerHTML = maxImages;
-renderImg()
-lookForVisible()
+/**
+ * JS sort table fields
+ */
+let tableSort = (n) => {
+    let tbl, rows, switching, shouldSwitch,
+        i, row1, row2, direction, switchCount = 0;
 
+    tbl = document.getElementById('table');
+    switching = true;
+    direction = 'asc';
+    while (switching) {
+        switching = false;
+        rows = tbl.rows;
+        for (i = 1; i < (rows.length - 1); ++i) {
+            shouldSwitch = false;
+            row1 = rows[i].getElementsByTagName('td')[n].innerHTML.toLowerCase();
+            row2 = rows[i + 1].getElementsByTagName('td')[n].innerHTML.toLowerCase();
+            if ((direction === 'asc' && tableSortComparator(row1, row2)) ||
+                (direction === 'desc' && tableSortComparator(row2, row1))) {
+                shouldSwitch = true;
+                break;
+            }
+        }
+        if (shouldSwitch) {
+            rows[i].parentNode.insertBefore(rows[i+1], rows[i]);
+            switching = true;
+            switchCount++;
+        } else if (switchCount === 0 && direction === "asc") {
+            direction = "desc";
+            switching = true;
+        }
+    }
+    showMessage(n, direction);
+}
+let tableSortComparator = (row1, row2) => {
+    let num1 = Number.parseFloat(row1);
+    let num2 = Number.parseFloat(row2);
+
+    if (isFloatOrInteger(num1) && isFloatOrInteger(num2)) {
+        return num1 > num2;
+    }
+    return row1 > row2;
+}
+function isFloatOrInteger(n) {
+    return n === +n;
+}
+
+function showMessage(n, dir) {
+    let msg, name;
+
+    msg = document.getElementById('notification');
+    name = document.getElementById(n).innerHTML;
+    msg.innerHTML = `Sorting by ${name}, order: ${dir.toUpperCase()}`;
+}

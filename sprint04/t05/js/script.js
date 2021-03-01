@@ -1,43 +1,57 @@
-'use strict'
+'use strict';
 
-let checkClass = (elem, attr) => elem.classList.contains(attr);
+let createP = (str) => {
+  let p = document.createElement('p');
+  p.textContent = str;
+  list.append(p);
+}
 
-let main = document.querySelector("main"),
-    zIndexCounter = 0;
-
-main.addEventListener('dblclick', (event) => {
-    let div = event.target
-
-    if (div.classList.contains('block')) {
-        div.classList.toggle('active')
+let showCookies = () => {
+  let cookies = document.cookie.split(';');
+  if (!cookies || (cookies.length <= 1 && cookies[0] === ''))
+    createP('[Empty]');
+  else
+    for (let i in cookies) {
+      createP(`--> ${cookies[i].split('=')[1]}`);
+      cookieCount++;
     }
-})
+}
 
-main.onmousedown = ((event) => {
-    let div = event.target
+let addCookies = () => {
+  let expDate, textValue = text.value.trim();
 
-    if (checkClass(div, 'active')) {
-        let cursorX = event.clientX - div.getBoundingClientRect().left,
-            cursorY = event.clientY - div.getBoundingClientRect().top,
-            moveTo = (pageX, pageY) => {
-                div.style.left = pageX - cursorX + 'px'
-                div.style.top = pageY - cursorY + 'px'
-            },
-            moveDiv = (event) => moveTo(event.pageX, event.pageY);
+  if (text.value === '' || textValue.length === 0) {
+    alert('It\'s empty. Try to input something in "Text input".');
+    return;
+  }
+  if (cookieCount === 0)
+    document.querySelector("#cookiesList p").remove();
 
-        // div.style.opacity = '.6'
-        div.style.position = 'absolute'
-        div.style.zIndex = zIndexCounter
-        zIndexCounter += 1
+  expDate = new Date();
+  expDate.setDate(expDate.getDate() + 30);
+  document.cookie = `${cookieCount}=${textValue};expires=${expDate.toUTCString()};path=/`;
 
-        moveTo(event.pageX, event.pageY)
-        document.addEventListener('mousemove', moveDiv)
-        div.onmouseup = (() => {
-            // div.style.opacity = '1'
-            document.removeEventListener('mousemove', moveDiv)
-            div.onmouseup = null;
-        })
-    }
-})
+  createP(`--> ${textValue}`);
+  text.value = '';
+  cookieCount++;
+}
 
-document.ondragstart = () => false;
+let clearCookies = () => {
+  if (confirm("Are you sure?")) {
+
+    document.querySelectorAll('#cookiesList p').forEach(p => p.remove());
+    createP('[Empty]');
+
+    let all = document.cookie.split(';');
+    for (let i in all)
+      document.cookie = `${all[i].split('=')[0]}='';expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/`;
+
+    cookieCount = 0;
+  }
+}
+
+let list = document.querySelector("#cookiesList");
+let text = document.querySelector("#text");
+let cookieCount = 0;
+
+showCookies();

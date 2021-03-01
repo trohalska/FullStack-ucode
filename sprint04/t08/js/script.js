@@ -1,112 +1,67 @@
-'use strict';
+'use strict'
 
 let get = (id) => document.querySelector(id);
+let getAll = (id) => document.querySelectorAll(id);
 
-let parsePhone = () => {
-    let wordInput = word.value.trim()
-    if (validation(wordInput)) return
+let countSpan = get('#counter')
+let maxSpan = get('#maxImages')
+let imgBlock = get('#imgBlock')
+let counter = 0
+let maxImages = 10
+let images = [
+    './assets/images/1.jpg',
+    './assets/images/2.jpg',
+    './assets/images/3.jpg',
+    './assets/images/4.jpg',
+    './assets/images/5.jpg',
+    './assets/images/6.jpg',
+    './assets/images/7.jpg',
+    './assets/images/8.jpg',
+    './assets/images/9.jpg',
+    './assets/images/10.jpg'
+]
 
-    if (wordInput.match(/^\d{10}$/g)) {
-        output.value = `${wordInput.slice(0,3)}-${wordInput.slice(3,6)}-${wordInput.slice(6,10)}`
-    } else {
-        output.value = 'Invalid phone number.'
+let renderImg = () => {
+    images.map((img) => {
+        imgBlock.insertAdjacentHTML('beforeend',
+            `<img class="image lazy" src="./assets/images/temp.gif" data-src="${img}" alt="${img}">`)
+    })
+}
+
+let addCounter = () => {
+    counter += 1
+    countSpan.innerHTML = counter
+    if (counter === maxImages) {
+        let div = get('.counter')
+        div.style.background = 'green'
+        // setTimeout(() => {
+        //   div.style.display = 'none'
+        // }, 3000)
     }
-    phoneSpan.innerHTML = ++phone;
-    document.cookie = `phone=${phone}`
 }
 
-let wordCount = () => {
-    let wordInput = word.value.trim()
-    let textInput = text.value.trim()
-    if (validation(wordInput, textInput)) return
+let lookForVisible = () => {
+    let imgAll = getAll('.lazy')
 
-    if (wordInput.match(/^\w+$/gi)) {
-        output.value = 'Word count: ' + (text.value.match(new RegExp(`${wordInput}`, 'g')) || []).length
-    } else {
-        output.value = 'Invalid input.'
+    if ('IntersectionObserver' in window) {
+        let imgObserver = new IntersectionObserver((entries, observer) => {
+            entries.map((entry) => {
+                if (entry.isIntersecting) {
+                    let lazyImg = entry.target
+                    lazyImg.src = lazyImg.dataset.src
+                    // lazyImg.style.height = 400 + 'px'
+                    lazyImg.style.width = '600px'
+                    lazyImg.classList.remove('lazy')
+                    imgObserver.unobserve(lazyImg)
+                    addCounter();
+                }
+            })
+        })
+        imgAll.forEach((lazyImage) => imgObserver.observe(lazyImage))
     }
-    countSpan.innerHTML = ++countW;
-    document.cookie = `countW=${countW}`
 }
 
-let wordReplace = () => {
-    let wordInput = word.value.trim()
-    let textInput = text.value.trim()
-    if (validation(wordInput, textInput)) return
+maxSpan.innerHTML = maxImages;
+renderImg()
+lookForVisible()
 
-    if (wordInput.match(/^\w+$/gi)) {
-        output.value = textInput.replace(/\S+/g, wordInput)
-    } else {
-        output.value = 'Invalid input.'
-    }
-    replaceSpan.innerHTML = ++replaceW;
-    document.cookie = `replaceW=${replaceW}`
-}
-
-let validation = (wordInput, textInput) => {
-    if (word.value === '' || wordInput.length === 0) {
-        alert('Word input is empty. Try to input something in "Word input".')
-        return true
-    }
-    if (textInput !== undefined && (text.value === '' || textInput.length === 0)) {
-        alert('Text iInput is empty. Try to input something in "Text input".')
-        return true
-    }
-    return false
-}
-
-
-let delay = 60 // seconds
-
-let setCookies = () => {
-    phone = 0
-    countW = 0
-    replaceW = 0
-    document.cookie = `phone=0`
-    document.cookie = `countW=0`
-    document.cookie = `replaceW=0`
-    updateValues()
-    word.value = ''
-    text.value = ''
-    output.value = ''
-}
-let getCookies = () => {
-    return document.cookie
-        .split(';')
-        .reduce((res, c) => {
-            const [key, val] = c.trim().split('=').map(decodeURIComponent)
-            try {
-                return Object.assign(res, { [key]: JSON.parse(val) })
-            } catch (e) {
-                return Object.assign(res, { [key]: val })
-            }
-        }, {})
-}
-let updateValues = () => {
-    phoneSpan.innerHTML = phone
-    countSpan.innerHTML = countW
-    replaceSpan.innerHTML = replaceW
-}
-
-let word = get("#word")
-let text = get("#text")
-let output = get("#output")
-let phoneSpan = get('#phone')
-let countSpan = get('#count')
-let replaceSpan = get('#replace')
-
-let phone = 0
-let countW = 0
-let replaceW = 0
-
-let cookies = getCookies()
-if (cookies.phone === undefined) {
-    setCookies()
-} else {
-    phone = cookies.phone
-    countW = cookies.countW
-    replaceW = cookies.replaceW
-    updateValues()
-}
-setInterval(setCookies, delay * 1000)
-// console.log(cookies)

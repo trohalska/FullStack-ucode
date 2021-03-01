@@ -2,44 +2,25 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="description" content="t03. Slider">
-  <meta name="keywords"
-        content="HTML, CSS, JavaScript, slider, ucode, unitfactory, cbl, cblworld">
-  <meta name="author" content="Tetiana Rohalska">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Slider</title>
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900"
-        rel="stylesheet"/>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <title>Drag'n'Drop Stones</title>
+    <meta name="description" content="t03. Drag'n'Drop Stones">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap">
 </head>
 
 <body>
-  <div class="slideshow-container">
-
-    <div class="hide fade">
-      <img src="https://i.postimg.cc/Kj71zvrX/charles-deluvio-GTUw-F3agc-I0-unsplash.jpg">
+<main>
+    <h1>Drag'n'Drop Stones</h1>
+    <div class="base">
+        <div class="block" id="red"></div>
+        <div class="block" id="green"></div>
+        <div class="block" id="blue"></div>
+        <div class="block" id="yellow"></div>
+        <div class="block" id="magenta"></div>
+        <div class="block" id="purple"></div>
     </div>
-
-    <div class="hide fade">
-      <img src="https://i.postimg.cc/kGPVqtSF/charles-deluvio-k-Cp-Gr-E0-G8-NE-unsplash.jpg">
-    </div>
-
-    <div class="hide fade">
-      <img src="https://i.postimg.cc/bJtG7RZw/charles-deluvio-c-Mv-Dru-Wjv0-Y-unsplash.jpg">
-    </div>
-
-    <a class="prev" onclick="listSlides(-1)">&#10094;</a>
-    <a class="next" onclick="listSlides(1)">&#10095;</a>
-  </div>
-
-  <div class="dots">
-    <span class="dot" onclick="currentSlide(0)"></span>
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-  </div>
-
-  <script src="js/script.js"></script>
+</main>
+<script src="js/script.js"></script>
 </body>
-
-</html>
