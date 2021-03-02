@@ -56,7 +56,7 @@ ucode FullStack program (front-end + Node.js)
 - t08   isNaN(), console.error(), console.log(), prompt(), Number.* (Step generator)
 - t09   Object.*, Class.*, String.*, Array.* (LinkedList)
 
-### Sprint-04 (Java Script, api):
+### Sprint-04 (JS, api):
 - t00   DOM (Secret lab)
 - t01   DOM, String.*, Array.* (Elements)
 - t02   DOM, setInterval, clearInterval (Image slider)
@@ -65,17 +65,21 @@ ucode FullStack program (front-end + Node.js)
 - t05   alert, confirm, DOM, String.*, Array.*, Date.*, Object.*, JSON.* (Notes with cookies)
 - t06   DOM, String.*, Array.*, Object.* (Sort table)
 - t07   DOM, Object.*, String.*, Array.*, Set.* (Marvelous list)
-
-** t08   setTimeout, Object.*, Class.*, String.*, Array.*, DOM (Lazy loading)
-smth do not work
-
+- t08   setTimeout, Object.*, Class.*, String.*, Array.*, DOM (Lazy loading)
 - t09   RegExp, localStorage, DOM, String.*, Array.*, Object.*, Date.* (LocalStorage)
 - t10_E RegExp, cookies, DOM, String.*, Array.*, Object.*, Date.* (RegExp and Cookies)
 
-### Sprint-05 (Java Script, node.js):
-
-
-
+### Sprint-05 (JS, node.js):
+- t00   run 'node index.js' (Good morning!)
+- t01   module.exports (Iron Vars)
+- t02   module.exports (Range)
+- t03   String.* (First upper)
+- t04   pipes, streams in js (String frequency)
+- t05   class get set (Hard worker)
+- t06   class get set toString(Tower)
+- t07   class private fields (Anonymous)
+- t08   class get set (Access)
+- t09   
 
 
 
