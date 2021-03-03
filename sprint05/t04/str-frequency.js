@@ -27,6 +27,7 @@ module.exports = class StrFrequency {
 
         this.str.toUpperCase()
             .split(/[^A-Z]+/g)
+            .filter(f => f !== '')
             .forEach(i => result[i] = (result[i] || 0) + 1)
 
         return result

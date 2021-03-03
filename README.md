@@ -79,8 +79,15 @@ ucode FullStack program (front-end + Node.js)
 - t06   class get set toString(Tower)
 - t07   class private fields (Anonymous)
 - t08   class get set (Access)
-- t09   
+- t09   class assign function (Mark Print)
 
+### Sprint-06 (JS, node.js):
+- t00   linked list, iterator (LinkedList)
+- t01   call, bind, this (Object to string)
+- t02   clone class (Clone the Avengers)
+- t03   exceptions (Try, catch)
+- t04   date (Quantum)
+- t05    (Go web!)
 
 
 
