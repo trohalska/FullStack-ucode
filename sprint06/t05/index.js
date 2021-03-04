@@ -20,8 +20,10 @@ app.set('view engine', 'ejs')
 app.set('views', './t05/views')
 
 app.get("/", (req, res, next) => {
-    res.send(`<h1>Go to localhost:${port}/normal to see normal space and localhost:${port}/quantum to see quantum space</h1>`)
-    res.send(`<h1>Go to localhost:${port}/quantum to see quantum space</h1>`)
+    let html =
+        `<a href="/normal">normal space</a><br><br>` +
+        `<a href="/quantum">quantum space</a>`
+    res.send(html)
 })
 
 app.get('/normal', (req, res, next) => {
@@ -39,10 +41,3 @@ app.get('/quantum', (req, res, next) => {
             quantumDay: quantumTime[2]
         })
 })
-
-// app.get("/quantum", (req, res, next) => {
-//     res.render("quantum",
-//         {
-//             test: "rofl",
-//         });
-// });
