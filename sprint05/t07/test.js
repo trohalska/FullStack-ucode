@@ -1,13 +1,12 @@
-'use strict'
+/*
+  Task 07 (test.js)
+  Task name: Tower
+*/
 
-const i = require('./index');
+const Tower = require('./tower');
 
-const mandarin = i.getAnonymous('Unknown', 'Mandarin', 'Ten Rings');
-
-console.log([
-    mandarin.name,
-    mandarin.alias,
-    mandarin.affiliation,
-].join('\n'));
-
-// console.log(mandarin.getPrivate())
+const starkTower = new Tower(93, 'Different', 'Manhattan, NY');
+starkTower.hasElevator = true;
+starkTower.arcCapacity = 70;
+starkTower.height = 1130;
+console.log(starkTower.toString());

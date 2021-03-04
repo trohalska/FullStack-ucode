@@ -1,4 +1,7 @@
-'use strict'
+/*
+  Task 08 (test.js)
+  Task name: Access
+*/
 
 const Access = require('./access');
 

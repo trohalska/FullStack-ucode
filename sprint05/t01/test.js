@@ -1,4 +1,7 @@
-'use strict'
+/*
+  Task 01 (test.js)
+  Task name: Iron Vars
+*/
 
 const i = require('./index')
 

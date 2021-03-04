@@ -1,8 +1,11 @@
-'use strict'
+/*
+  Task 05 (test.js)
+  Task name: Hard worker
+*/
 
 const HardWorker = require('./hard-worker');
 
-let bruce = new HardWorker;
+bruce = new HardWorker;
 
 bruce.name = 'Bruce';
 console.log(bruce.name);
