@@ -1,19 +1,14 @@
 'use strict'
 
 function calculateTime() {
-    let date = new Date(1939, 0, 1);
-    return date
-}
-let now = new Date ()
-Date.prototype.years = function() {
+    let date = new Date(1939, 1, 1)
+    let now = new Date()
 
-    return -(this.getYear() - now.getYear())
-}
-Date.prototype.months = function() {
-    return -(this.getMonth() - now.getMonth())
+    Date.prototype.years = () => { return now.getFullYear() - date.getFullYear() }
+    Date.prototype.months = () => { return now.getMonth() - date.getMonth() }
+    Date.prototype.days = () => { return now.getDate() - date.getDate() }
 
+    return date;
 }
-Date.prototype.days = function() {
-    return -(this.getDate() - now.getDate())
-}
-module.exports.calculateTime = calculateTime;
+
+module.exports.calculateTime = calculateTime

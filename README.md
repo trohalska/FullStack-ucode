@@ -76,8 +76,8 @@ ucode FullStack program (front-end + Node.js)
 - t03   String.* (First upper)
 - t04   pipes, streams in js (String frequency)
 - t05   class get set (Hard worker)
-- t06   class get set toString(Tower)
-- t07   class private fields (Anonymous)
+- t06   class private fields (Anonymous)
+- t07   class get set toString(Tower)
 - t08   class get set (Access)
 - t09   class assign function (Mark Print)
 
@@ -87,7 +87,7 @@ ucode FullStack program (front-end + Node.js)
 - t02   clone class (Clone the Avengers)
 - t03   exceptions (Try, catch)
 - t04   date (Quantum)
-- t05    (Go web!)
+- t05   html (Go web!)
 
 
 

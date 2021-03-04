@@ -1,16 +1,17 @@
 'use strict'
 
 function calculateTime() {
-    let result = [];
-    let date = new Date(1939, 0, 1);
-    let now = new Date();
-    let difference = (Math.abs(date) + Number(now)) / 7;
-    let quantumDate = new Date(Number(date) + Number(difference));
-    result.push(quantumDate.getYear() - date.getYear());
-    result.push(quantumDate.getMonth() - date.getMonth());
-    result.push(quantumDate.getDate() - date.getDate());
+    let date = new Date(1939, 1, 1)
+    let now = new Date()
+
+    let diff = (Math.abs(date) + Number(now)) / 7
+    let quantumDate = new Date(Number(date) + Number(diff))
+
+    let result = []
+    result.push(quantumDate.getFullYear() - date.getFullYear())
+    result.push(quantumDate.getMonth() - date.getMonth())
+    result.push(quantumDate.getDate() - date.getDate())
     return result;
 }
 
-calculateTime();
-module.exports.calculateTime = calculateTime;
+module.exports.calculateTime = calculateTime
