@@ -1,10 +1,9 @@
-'use strict'
-
 const express = require('express')
-const http = require('http');
-const hostname = '127.0.0.1'
-const port = 8080
+const PORT = process.env.PORT ?? 8080
+
 const app = express()
+app.set('view engine', 'ejs')
+app.set('views', './t06/views')
 
 const normal = require('./normal-router')
 const quantum = require('./quantum-router')
@@ -12,12 +11,9 @@ const quantum = require('./quantum-router')
 const time = normal.calculateTime()
 const quantumTime = quantum.calculateTime()
 
-app.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`)
+app.listen(PORT, () => {
+    console.log(`Server has been started on port ${PORT}...`)
 })
-
-app.set('view engine', 'ejs')
-app.set('views', './t05/views')
 
 app.get("/", (req, res, next) => {
     let html =

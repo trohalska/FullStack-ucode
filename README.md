@@ -87,14 +87,17 @@ ucode FullStack program (front-end + Node.js)
 - t02   clone class (Clone the Avengers)
 - t03   exceptions (Try, catch)
 - t04   date (Quantum)
-- t05   html (Go web!)
+- t05   get, post, thymeleaf (What about forms?)
+- t06   get, ejs (Go web!)
+- t07   print info about connection (Info)
+- t08   (A new set)
 
 ### Sprint-07 (diff modules, node.js):
 - t00   get, count page reloads with cookies (Cookie counter)
 - t01   get, post, session (Session for new)
 - t02   get, post, bcrypt, session (Hack it)
 ** t03   encoding (Charset)
-** t04   ()
+** t04   (A new set)
 
 
 

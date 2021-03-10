@@ -7,8 +7,6 @@ const PORT = process.env.PORT ?? 8080
 
 const app = express()
 const templateEngine = new TemplateEngine()
-const urlencodedParser = bodyParser.urlencoded({extended: false})
-
 app.engine('html', expressThymeleaf(templateEngine))
 app.set('view engine', 'html')
 app.set('views', __dirname + '/')

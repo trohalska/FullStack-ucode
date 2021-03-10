@@ -1,14 +1,16 @@
-'use strict'
 
-const normal = require('./normal')
-const quantum = require('./quantum')
+/*
+  Task 04 (test.js)
+  Task name: Quantum
+*/
 
-const time = normal.calculateTime()
+const normal = require('./normal');
+const quantum = require('./quantum');
 
-console.log(`In real life you were absent for ${time.years()} years,` +
-    ` ${time.months()} months, ${time.days()} days.`)
+const time = normal.calculateTime();
+
+console.log(`In real life you were absent for ${time.years()} years, ${time.months()} months, ${time.days()} days.`)
 
 const quantumTime = quantum.calculateTime();
 
-console.log(`In quantum space you were absent for ${quantumTime[0]} years,` +
-    ` ${quantumTime[1]} months, ${quantumTime[2]} days.`)
+console.log(`In quantum space you were absent for ${quantumTime[0]} years, ${quantumTime[1]} months, ${quantumTime[2]} days.`)

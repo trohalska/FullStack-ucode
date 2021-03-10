@@ -9,9 +9,9 @@ class ExtendableFunc extends Function {
 
 
 class Avenger extends ExtendableFunc {
-    constructor({ heroName, alias, gender, age, powers }) {
+    constructor({ name, alias, gender, age, powers }) {
         super()
-        this.heroName = heroName
+        this.heroName = name
         this.alias = alias
         this.gender = gender
         this.age = age

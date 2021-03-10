@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en"  xmlns:thjs="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="t08. A new set">
+    <link rel="stylesheet" href="style.css">
+    <title>A new set</title>
+</head>
+<body>
+<h1>New Avenger application</h1>
+<div id="post">
+    <p>POST</p>
+    <code id="array">Array<br>
+        (
+        <br>
+        <code class="data">[name]&emsp;=>&emsp;<span thjs:text="${name}"></span></code><br>
+        <code class="data">[email]&emsp;=>&emsp;<span thjs:text="${email}"></span></code><br>
+        <code class="data">[age]&emsp;=>&emsp;<span thjs:text="${age}"></span></code><br>
+        <code class="data">[description]&emsp;=>&emsp;<span thjs:text="${description}"></span></code><br>
+        <code class="data">[photo]&emsp;=>&emsp;<span thjs:text="${photo}"></span></code>
+        <br>
+        )
+        <br><br>
+    </code>
+</div><br>
+<form action="/" method="POST">
+    <fieldset id="form">
+        <fieldset>
+            <legend>About candidate</legend><br>
+            <span>Name</span>
+            <label>
+                <input type="text" name="name"
+                       placeholder="Tell your name" size="18" autofocus>
+                <span>Superhero name</span>
+                <input type="text" name="email"
+                       placeholder="Tell your e-mail" size="18">
+                <span>Age</span>
+                <input type="number" name="age" min="1" max="999" step="1"
+                       size="5"><br><br>
+                <span>About</span>
+                <textarea name="description" id="about" cols="70" rows="5"
+                          maxlength="500"
+                          placeholder="Tell about yourself, max 500 symbols"></textarea><br><br>
+                <span>Your photo:</span>
+                <input type="file" name="photo">
+            </label>
+            <p></p>
+        </fieldset>
+        <br>
+        <button type="reset">CLEAR</button>
+        <button type="submit">SEND</button>
+        <br><br>
+    </fieldset>
+</form>
+</body>
+
+</html>
