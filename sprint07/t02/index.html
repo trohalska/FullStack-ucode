@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:thjs="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="description" content="t02. Hack it!" charset="utf-8">
+    <title>Hack it!</title>
+    <style>
+        p {margin: 2px;}
+        #answer {color: green;}
+    </style>
+</head>
+<body>
+<h1>Password</h1>
+<form action="/" method="post">
+    <p id="answer" thjs:text="${answer}"></p>
+    <p>Password not saved at session.</p>
+    <p>
+        <label for="sPassword">Password for saving to session</label>
+        <input required placeholder="Password to session" type="text" id="sPassword" name="savePassword">
+    </p>
+    <p>
+        <label for="salt">Salt for saving to session</label>
+        <input required placeholder="Salt to session" type="number" id="salt" name="salt">
+    </p>
+    <input type="submit" value="Save">
+</form>
+</body>
+</html>

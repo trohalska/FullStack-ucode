@@ -89,6 +89,12 @@ ucode FullStack program (front-end + Node.js)
 - t04   date (Quantum)
 - t05   html (Go web!)
 
+### Sprint-07 (diff modules, node.js):
+- t00   get, count page reloads with cookies (Cookie counter)
+- t01   get, post, session (Session for new)
+- t02   get, post, bcrypt, session (Hack it)
+** t03   encoding (Charset)
+** t04   ()
 
 
 
