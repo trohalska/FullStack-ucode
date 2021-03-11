@@ -1,0 +1,31 @@
+USE ucode_web;
+
+DROP TABLE IF EXISTS powers;
+DROP TABLE IF EXISTS races;
+DROP TABLE IF EXISTS teams;
+
+CREATE TABLE IF NOT EXISTS powers (
+      id INT(11) AUTO_INCREMENT,
+      hero_id INT(11) NOT NULL,
+      name VARCHAR(63) NOT NULL,
+      points INT(11) NOT NULL,
+      type ENUM('attack', 'defense') NOT NULL,
+      FOREIGN KEY (hero_id) REFERENCES heroes(id) ON DELETE CASCADE ON UPDATE CASCADE,
+      PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS races (
+     id INT(11) AUTO_INCREMENT,
+     hero_id INT(11) NOT NULL,
+     name VARCHAR(63) NOT NULL,
+     FOREIGN KEY (hero_id) REFERENCES heroes(id) ON DELETE CASCADE ON UPDATE CASCADE,
+     PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS teams (
+     id INT(11) AUTO_INCREMENT,
+     hero_id INT(11) NOT NULL,
+     name VARCHAR(63) NOT NULL,
+     FOREIGN KEY (hero_id) REFERENCES heroes(id) ON DELETE CASCADE ON UPDATE CASCADE,
+     PRIMARY KEY (id)
+);

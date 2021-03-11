@@ -99,6 +99,12 @@ ucode FullStack program (front-end + Node.js)
 ** t03   encoding (Charset)
 ** t04   (A new set)
 
-
-
-
+### Sprint-08 (SQL, MySQL):
+- t00   install MySQL, create DB, create user (Database and User)
+- t01   create, insert (Table and data)
+- t02   insert, foreign key(More tables!)
+- t03   select, join (Join it!)
+- t04   select, group by, having, order by (Selection) task 3 don't work
+- t05   select, like, and, or (Find out the truth)
+- t06   create connection to db in node.js(Connection)
+- t07   insert, save, delete from node.js (Database Model)

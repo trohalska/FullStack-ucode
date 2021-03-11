@@ -16,6 +16,8 @@
     "cookie-parser": "^1.4.5",
     "express-session": "^1.17.1",
     "ip": "^1.1.5",
+    "mysql2": "^2.2.5",
+    "read-config": "^2.0.0",
     "thymeleaf": "^0.20.4"
   }
 }

@@ -1,0 +1,40 @@
+USE ucode_web;
+
+INSERT INTO powers (hero_id, name, points, type) VALUES (1, 'iron suit', 250, 'defense');
+INSERT INTO powers (hero_id, name, points, type) VALUES (1, 'iron suit', 250, 'attack');
+INSERT INTO powers (hero_id, name, points, type) VALUES (2, 'iron shield', 200, 'defense');
+INSERT INTO powers (hero_id, name, points, type) VALUES (3, 'thunder hammer', 500, 'attack');
+INSERT INTO powers (hero_id, name, points, type) VALUES (3, 'gods health', 500, 'defense');
+INSERT INTO powers (hero_id, name, points, type) VALUES (4, 'bloody fist', 110, 'attack');
+INSERT INTO powers (hero_id, name, points, type) VALUES (5, 'shape shifter', 350, 'attack');
+INSERT INTO powers (hero_id, name, points, type) VALUES (6, 'magic', 400, 'defense');
+INSERT INTO powers (hero_id, name, points, type) VALUES (7, 'superpowers of mind stone', 450, 'defense');
+INSERT INTO powers (hero_id, name, points, type) VALUES (8, 'black cat suit', 150, 'attack');
+INSERT INTO powers (hero_id, name, points, type) VALUES (10, 'bow', 80, 'attack');
+
+INSERT races (hero_id, name) VALUE (1, 'human');
+INSERT races (hero_id, name) VALUE (2, 'human');
+INSERT races (hero_id, name) VALUE (3, 'god');
+INSERT races (hero_id, name) VALUE (4, 'human');
+INSERT races (hero_id, name) VALUE (5, 'human');
+INSERT races (hero_id, name) VALUE (6, 'human');
+INSERT races (hero_id, name) VALUE (7, 'robot');
+INSERT races (hero_id, name) VALUE (8, 'human');
+INSERT races (hero_id, name) VALUE (9, 'human');
+INSERT races (hero_id, name) VALUE (10, 'human');
+INSERT races (hero_id, name) VALUE (11, 'kree');
+INSERT races (hero_id, name) VALUE (13, 'robot');
+
+INSERT teams (hero_id, name) VALUE (1, 'Avengers');
+INSERT teams (hero_id, name) VALUE (2, 'Avengers');
+INSERT teams (hero_id, name) VALUE (3, 'Avengers');
+INSERT teams (hero_id, name) VALUE (4, 'Avengers');
+INSERT teams (hero_id, name) VALUE (4, 'Hydra');
+INSERT teams (hero_id, name) VALUE (5, 'Avengers');
+INSERT teams (hero_id, name) VALUE (7, 'Hydra');
+INSERT teams (hero_id, name) VALUE (7, 'Avengers');
+INSERT teams (hero_id, name) VALUE (9, 'Avengers');
+INSERT teams (hero_id, name) VALUE (10, 'Avengers');
+INSERT teams (hero_id, name) VALUE (11, 'Hydra');
+INSERT teams (hero_id, name) VALUE (13, 'Avengers');
+INSERT teams (hero_id, name) VALUE (13, 'Hydra');
