@@ -9,14 +9,17 @@
     "express": "^4.17.1",
     "express-thymeleaf": "^0.3.0",
     "moment": "^2.29.1",
-    "redis": "^3.0.2"
+    "redis": "^3.0.2",
+    "shortid": "^2.2.16"
   },
   "devDependencies": {
     "bcrypt": "^5.0.1",
     "cookie-parser": "^1.4.5",
     "express-session": "^1.17.1",
     "ip": "^1.1.5",
+    "joi": "^17.4.0",
     "mysql2": "^2.2.5",
+    "nodemailer": "^6.5.0",
     "read-config": "^2.0.0",
     "thymeleaf": "^0.20.4"
   }

@@ -90,7 +90,7 @@ ucode FullStack program (front-end + Node.js)
 - t05   get, post, thymeleaf (What about forms?)
 - t06   get, ejs (Go web!)
 - t07   print info about connection (Info)
-- t08   (A new set)
+- t08   get, post(A new set)
 
 ### Sprint-07 (diff modules, node.js):
 - t00   get, count page reloads with cookies (Cookie counter)
@@ -108,3 +108,10 @@ ucode FullStack program (front-end + Node.js)
 - t05   select, like, and, or (Find out the truth)
 - t06   create connection to db in node.js(Connection)
 - t07   insert, save, delete from node.js (Database Model)
+
+### Sprint-09 (Node.js, MySQL):
+- t00   fullstack (Registration)
+- t01   fullstack (Login)
+- t02   fullstack (Password Reminder)
+- t03   login-reg form, t00-t02 together (Bring them together!) (in order this to work need to fill in 74 str in loginService.js)
+
